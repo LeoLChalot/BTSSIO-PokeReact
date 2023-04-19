@@ -1,14 +1,14 @@
 import { Outlet, Link } from "react-router-dom";
 import "./Layout.css";
+import Logo from "../../assets/logo.png";
 import React, { useEffect } from "react";
 
 export default function Layout() {
-    let btnPoke = document.querySelector(".btn-aside-ext");
-    let asideMenu = document.querySelector(".Aside-menu");
-
-    useEffect(() => toggleAside(), [])
+	useEffect(() => toggleAside(), []);
 
 	function toggleAside() {
+		let btnPoke = document.querySelector(".btn-aside-ext");
+		let asideMenu = document.querySelector(".Aside-menu");
 		console.log("1");
 		btnPoke.classList.toggle("active");
 		asideMenu.classList.toggle("active");
@@ -18,19 +18,21 @@ export default function Layout() {
 		<>
 			<header>
 				<nav className="Navbar">
+					<div className="logo">
+						<img src="{Logo}" alt="logo pokémon" />
+					</div>
 					<ul>
 						<li>
-							<Link to="/">Home</Link>
+							<Link to="/bestiaire">Béstaire</Link>
 						</li>
 						<li>
-							<Link to="/bestiaire">Béstaire</Link>
+							<Link to="/">Home</Link>
 						</li>
 						<li>
 							<Link to="/pokedex">Pokédex</Link>
 						</li>
 					</ul>
 				</nav>
-				{/* onClick={toggleAside()} */}
 				<div className="btn-aside-ext" onClick={() => toggleAside()}>
 					<div className="btn-aside-line">
 						<div className="btn-aside-in">
