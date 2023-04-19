@@ -1,0 +1,103 @@
+.Navbar{
+    background-color: white;
+	position: fixed;
+	top: 0;
+	left: 0;
+    width: 100%;
+    height: 10vh;
+    display: none;
+}
+.Navbar ul {
+    padding: 0 40px;
+	width: 100%;
+    height: 100%;
+	list-style-type: none;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+.Navbar ul a{
+    text-decoration: none;
+    color: var(--text-red);
+    font-weight: var(--text-bold);
+}
+
+.btn-aside-ext{
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    border-radius: var(--border-round);
+    background-color: var(--bg-red);
+    border: var(--border-red);
+    transition: .8s all ease;
+    box-shadow: var(--shadow);
+}
+.btn-aside-ext.active{
+    transform: rotate(360deg);
+}
+.btn-aside-line{
+    z-index: 3;
+    width: 40px;
+    position: absolute;
+    top: calc(50% - 2px);
+    left: -2px;
+    border-radius: 2px;
+    background-color: var(--text-white);
+    border: var(--border-white);
+}
+.btn-aside-in{
+    z-index: 4;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: calc(50% - 5px);
+    left: calc(50% - 5px);
+    border-radius: var(--border-round);
+    background-color: var(--bg-white);
+}
+.btn-black-point{
+    z-index: 5;
+    width: 3px;
+    height: 3px;
+    position: absolute;
+    top: calc(50% - 1.5px);
+    left: calc(50% - 1.5px);
+    border-radius: var(--border-round);
+    background-color: var(--bg-black);
+}
+.Aside-menu{
+    width: auto;
+    height: 100%;
+    background-color: white;
+	position: fixed;
+	top: 0;
+	left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-100%);
+    transition: .3s all ease;
+}
+.Aside-menu.active{
+    transform: translate(0%);
+}
+.Aside-menu ul {
+    padding: 0 40px;
+	width: 100%;
+    height: 100%;
+	list-style-type: none;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+.Aside-menu ul a{
+    text-decoration: none;
+    color: var(--text-red);
+    font-weight: var(--text-bold);
+}
