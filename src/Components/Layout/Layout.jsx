@@ -1,6 +1,6 @@
 import { Outlet, Link } from "react-router-dom";
 import "./Layout.css";
-import Logo from "../../assets/logo.png";
+import logo from "../../assets/logo.png";
 import React, { useEffect } from "react";
 
 export default function Layout() {
@@ -19,11 +19,11 @@ export default function Layout() {
 			<header>
 				<nav className="Navbar">
 					<div className="logo">
-						<img src="{Logo}" alt="logo pokémon" />
+						<img src={logo} alt="logo pokémon" />
 					</div>
 					<ul>
 						<li>
-							<Link to="/bestiaire">Béstaire</Link>
+							<Link to="/bestiaire">Bestaire</Link>
 						</li>
 						<li>
 							<Link to="/">Home</Link>
@@ -41,12 +41,15 @@ export default function Layout() {
 					</div>
 				</div>
 				<aside className="Aside-menu">
+					<div className="logo">
+						<img src={logo} alt="logo pokémon" />
+					</div>
 					<ul>
 						<li>
 							<Link to="/">Home</Link>
 						</li>
 						<li>
-							<Link to="/bestiaire">Béstaire</Link>
+							<Link to="/bestiaire">Bestaire</Link>
 						</li>
 						<li>
 							<Link to="/pokedex">Pokédex</Link>

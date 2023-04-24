@@ -81,6 +81,10 @@
     transform: translate(-100%);
     transition: .3s all ease;
 }
+.Aside-menu .logo,
+.Aside-menu .logo img{
+    width: 100%;
+}
 .Aside-menu.active{
     transform: translate(0%);
 }

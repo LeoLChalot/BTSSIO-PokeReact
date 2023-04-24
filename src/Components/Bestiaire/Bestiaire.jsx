@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import "./Bestiaire.css";
 import axios from "axios";
-// import { V4 as uuidv4 } from 'uuid';
 
 
 export default function Home() {
@@ -37,11 +36,11 @@ export default function Home() {
 			<div className="Bestiaire-container">
 				<h1>Bestiaire</h1>
 				<div className="Pokemons-container">
-				{/* {pokeArray.map((pokemon) => {
+				{pokeArray.map((pokemon) => {
 					<div className="Pokemon-card">
 						<p>{ pokemon.name }</p>
 					</div>
-				})} */}
+				})}
 				</div>
 				
 			</div>
