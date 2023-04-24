@@ -19,7 +19,13 @@ export default function Home() {
 						console.log(pokeArray);
 						let results = data.results;
 						results.map((pokemon) => {
-							setPokeArray(pokeArray => pokeArray + pokemon)
+							return(
+								<>
+									<div className="pokeCard">
+										{ pokemon }
+									</div>
+								</>
+							)
 						});
 						console.log(pokeArray)
 					})

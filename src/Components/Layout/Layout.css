@@ -7,6 +7,10 @@
     height: 10vh;
     display: none;
 }
+.Navbar .logo{
+    position: absolute;
+    left: 10px;
+}
 .Navbar ul {
     padding: 0 40px;
     width: 100%;
@@ -81,7 +85,11 @@
     transform: translate(-100%);
     transition: .3s all ease;
 }
-.Aside-menu .logo,
+.Aside-menu .logo{
+    position: absolute;
+    top: calc(50% - 150px);
+    width: 100%;
+}
 .Aside-menu .logo img{
     width: 100%;
 }
