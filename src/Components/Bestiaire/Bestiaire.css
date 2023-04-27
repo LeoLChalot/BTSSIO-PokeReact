@@ -1,0 +1,62 @@
+main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.title{
+    padding: 1em;
+}
+.pokemon-container{
+    z-index: 0;
+    padding: 1em;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.poke-card{
+    width: 120px;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.btn-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+button{
+    border: none;
+    border-radius: 5px;
+    width: 50px;
+    height: 20px;
+}
+
+.btn-add{
+    background-color: #00af20;
+}
+
+.btn-info{
+    background-color: #0088e3;
+}
+
+.pagination{
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#pagination-moins,
+#pagination-plus{
+    font-size: 2em;
+    background: transparent;
+    border: none;
+}
