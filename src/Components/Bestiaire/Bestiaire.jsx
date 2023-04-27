@@ -6,12 +6,11 @@ import {v4 as uuidv4} from 'uuid'
 
 export default function Home() {
 	let [allPokemon, setAllPokemon] = useState([]);
+	let [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon?offset=0&limit=20")
 	let [urlPlus, setUrlPlus] = useState('');
 	let [urlMoins, setUrlMoins] = useState('');
-	let limit = 20;
-	let offset = 20;
-	const max = 1281;
-	let url = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=20"
+	let pokedex = [];
+	// let url = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=20"
 
 
 	useEffect(() => {displayPokemon(url)}, []);
@@ -27,7 +26,7 @@ export default function Home() {
 					const results = data.results;
 					setUrlPlus(urlMoins => data.next)
 					// urlPlus = data.next;
-					setUrlPlus(urlPlus => data.previous)
+					setUrlMoins(urlPlus => data.previous)
 					// urlMoins = data.previous;
 					console.log(urlPlus, urlMoins)
 
@@ -61,14 +60,20 @@ export default function Home() {
 		displayPokemon(urlMoins);
 	}
 
+	function addToPokedex(pokemon){
+		// console.log(pokemon);
+		pokedex.push(pokemon);
+		console.log(pokedex)
+	}
+
 	// console.log(allPokemon)
 
 	return (
 		<>
 			<main>
-				<div className="title">
+				{/* <div className="title">
 					<h2>Pokémons</h2>
-				</div>
+				</div> */}
 				<div className="pokemon-container">
 					{allPokemon.map((pokemon) => {
 						return (
@@ -78,7 +83,7 @@ export default function Home() {
 									<img src={pokemon.sprites.front_default} alt="image du pokémon" />
 									<div className="btn-container">
 										<button className="btn-info">Info</button>
-										<button className="btn-add">Add</button>
+										<button className="btn-add" onClick={addToPokedex(pokemon.name)}>Add</button>
 									</div>
 								</div>
 							</>
@@ -93,3 +98,4 @@ export default function Home() {
 		</>
 	);
 }
+
