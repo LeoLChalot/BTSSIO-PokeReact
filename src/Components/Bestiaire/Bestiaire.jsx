@@ -9,6 +9,7 @@ export default function Home() {
 	let [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon?offset=0&limit=20")
 	let [urlPlus, setUrlPlus] = useState('');
 	let [urlMoins, setUrlMoins] = useState('');
+	let urlLast = "https://pokeapi.co/api/v2/pokemon?offset=1261&limit=1"
 	let pokedex = [];
 	// let url = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=20"
 
@@ -50,8 +51,15 @@ export default function Home() {
 	}
 	console.log(urlPlus, urlMoins)
 
+	function pageFirst(){
+		setAllPokemon(allPokemon => [])
+		displayPokemon(url);
+	}
+	function pageLast(){
+		setAllPokemon(allPokemon => [])
+		displayPokemon(urlLast);
+	}
 	function pagePlus(){
-		// console.log(urlPlus)
 		setAllPokemon(allPokemon => [])
 		displayPokemon(urlPlus);
 	}
@@ -61,9 +69,7 @@ export default function Home() {
 	}
 
 	function addToPokedex(pokemon){
-		// console.log(pokemon);
-		pokedex.push(pokemon);
-		console.log(pokedex)
+
 	}
 
 	// console.log(allPokemon)
@@ -92,6 +98,8 @@ export default function Home() {
 				</div>
 				<div className="pagination">
 					<button id="pagination-moins" onClick={pageMoins}>⬅️</button>
+					<button id="pagination-first" onClick={pageFirst}>⏮️</button>
+					<button id="pagination-last" onClick={pageLast}>⏭️</button>
 					<button id="pagination-plus" onClick={pagePlus}>➡️</button>
 				</div>
 			</main>
@@ -99,3 +107,4 @@ export default function Home() {
 	);
 }
 
+// export default pokedex;

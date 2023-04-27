@@ -59,7 +59,9 @@ button{
 }
 
 #pagination-moins,
-#pagination-plus{
+#pagination-plus,
+#pagination-first,
+#pagination-last{
     font-size: 2em;
     background: transparent;
     border: none;
