@@ -1,8 +1,18 @@
 import { useState, useEffect } from "react";
-import { Outlet, Link } from "react-router-dom";
 import "./Bestiaire.css";
 import axios from "axios";
 import {v4 as uuidv4} from 'uuid'
+import dark from '../../assets/cards/type-dark.png'
+import electric from '../../assets/cards/type-electric.png'
+import fairy from '../../assets/cards/type-fairy.png'
+import fighting from '../../assets/cards/type-fighting.png'
+import fire from '../../assets/cards/type-fire.png'
+import ghost from '../../assets/cards/type-ghost.png'
+import grass from '../../assets/cards/type-grass.png'
+import psychic from '../../assets/cards/type-psychic.png'
+import steel from '../../assets/cards/type-steel.png'
+import water from '../../assets/cards/type-water.png'
+import unknown from '../../assets/cards/type-unknown.png'
 
 export default function Home() {
 	let [allPokemon, setAllPokemon] = useState([]);
@@ -11,8 +21,6 @@ export default function Home() {
 	let [urlMoins, setUrlMoins] = useState('');
 	let urlLast = "https://pokeapi.co/api/v2/pokemon?offset=1261&limit=1"
 	let pokedex = [];
-	// let url = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=20"
-
 
 	useEffect(() => {displayPokemon(url)}, []);
 
@@ -49,7 +57,6 @@ export default function Home() {
 			(e) => console.log(e);
 		}
 	}
-	console.log(urlPlus, urlMoins)
 
 	function pageFirst(){
 		setAllPokemon(allPokemon => [])
@@ -77,16 +84,16 @@ export default function Home() {
 	return (
 		<>
 			<main>
-				{/* <div className="title">
-					<h2>Pokémons</h2>
-				</div> */}
 				<div className="pokemon-container">
 					{allPokemon.map((pokemon) => {
 						return (
-							<>
-								<div key={uuidv4()}className="poke-card">
-									<p>{pokemon.name}</p>
+							<>	
+							
+							<div key={uuidv4()}className="poke-card" type={pokemon.types[0].type.name}>
+									{console.log(pokemon)}
+									
 									<img src={pokemon.sprites.front_default} alt="image du pokémon" />
+									<p>{pokemon.name}</p>
 									<div className="btn-container">
 										<button className="btn-info">Info</button>
 										<button className="btn-add" onClick={addToPokedex(pokemon.name)}>Add</button>
@@ -103,6 +110,7 @@ export default function Home() {
 					<button id="pagination-plus" onClick={pagePlus}>➡️</button>
 				</div>
 			</main>
+
 		</>
 	);
 }

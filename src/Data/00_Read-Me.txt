@@ -1,0 +1,1 @@
+Tous les fichiers du dossiers data sont donnés à titre d'exemple pour une meilleure compréhension de la structure des objets récupéré via l'API pokeapi.io
