@@ -2,17 +2,6 @@ import { useState, useEffect } from "react";
 import "./Bestiaire.css";
 import axios, { all } from "axios";
 import { v4 as uuidv4 } from "uuid";
-import dark from "../../assets/cards/type-dark.png";
-import electric from "../../assets/cards/type-electric.png";
-import fairy from "../../assets/cards/type-fairy.png";
-import fighting from "../../assets/cards/type-fighting.png";
-import fire from "../../assets/cards/type-fire.png";
-import ghost from "../../assets/cards/type-ghost.png";
-import grass from "../../assets/cards/type-grass.png";
-import psychic from "../../assets/cards/type-psychic.png";
-import steel from "../../assets/cards/type-steel.png";
-import water from "../../assets/cards/type-water.png";
-import unknown from "../../assets/cards/type-unknown.png";
 
 export default function Home() {
 	let [allPokemon, setAllPokemon] = useState([]);
@@ -102,14 +91,6 @@ export default function Home() {
 	return (
 		<>
 			<main>
-				{/* <div className="btn-container-sort">
-					<button onClick={displayPokemon(url)}>All</button>
-					<button onClick={() => {
-						setAllPokemon((allPokemon) => []);
-						displayPokemon("alpha")}}>A-Z</button>
-					<button>Type</button>
-				</div> */}
-
 				<div className="pokemon-container">
 					{allPokemon.map((pokemon) => {
 						return (
