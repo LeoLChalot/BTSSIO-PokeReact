@@ -4,6 +4,13 @@
   padding: 2rem;
   text-align: center;
 }
+*,
+::before,
+::after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 @keyframes logo-spin {
   from {

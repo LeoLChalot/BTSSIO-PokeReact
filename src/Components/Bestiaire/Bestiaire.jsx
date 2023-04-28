@@ -16,7 +16,6 @@ export default function Home() {
 	}, []);
 
 	async function displayPokemon(url, sort) {
-		
 		try {
 			// ? On récupère la liste de l'ensemble des pokémons (limit et offset à utiliser pour la pagination)
 			axios
@@ -26,20 +25,16 @@ export default function Home() {
 					const data = res.data;
 					const results = data.results;
 					console.log(results);
-					if (sort != undefined) {
-						if(sort == "alpha")
-						results.sort(function compare(a, b) {
-							if (a.name < b.name) return -1;
-							if (a.name > b.name) return 1;
-							return 0;
-						});
-					}
+					results.sort(function compare(a, b) {
+						if (a.name < b.name) return -1;
+						if (a.name > b.name) return 1;
+						return 0;
+					});
 
 					setUrlPlus((urlMoins) => data.next);
-					// urlPlus = data.next;
-					setUrlMoins((urlPlus) => data.previous);
-					// urlMoins = data.previous;
-					console.log(urlPlus, urlMoins);
+					if (data.previous != undefined) {
+						setUrlMoins((urlPlus) => data.previous);
+					}
 
 					// ? Pour chaque résultat, on récupère les informations (Object) pour chaque pokémon
 					results.map(async (pokemon) => {
@@ -52,7 +47,6 @@ export default function Home() {
 							(e) => console.log(e);
 						}
 					});
-					// console.log(allPokemon)
 				})
 
 				.catch((e) => console.log(e));
@@ -79,14 +73,9 @@ export default function Home() {
 			displayPokemon(urlMoins);
 		}
 	}
-	function addToPokedex(pokemon) {}
-
-	// function sortAZ(){
-	// 	setAllPokemon(allPokemon.sort())
-	// 	console.log(allPokemon)
-	// }
-
-	// console.log(allPokemon)
+	function addToPokedex(pokemon) {
+		console.log(pokemon);
+	}
 
 	return (
 		<>
@@ -102,8 +91,8 @@ export default function Home() {
 									<p>{pokemon.name}</p>
 									<div className="btn-container">
 										<button className="btn-info">Info</button>
-										<button className="btn-add" onClick={addToPokedex(pokemon.name)}>
-											Add
+										<button className="btn-add" onClick={() => addToPokedex(pokemon.name)}>
+											add
 										</button>
 									</div>
 								</div>

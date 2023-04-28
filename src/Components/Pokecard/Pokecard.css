@@ -1,0 +1,93 @@
+.pokecard-body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+	width: 90vw;
+    padding: 2em;
+	/* height: 100vh; */
+	/* background-color: rgb(255, 165, 0); */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.pokecard {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	gap: 2em;
+}
+.logo-big {
+	width: 250px;
+}
+.logo-small {
+	width: 50px;
+}
+.pokeball {
+	width: 40px;
+}
+.poke-physics,
+.poke-fight {
+	border-radius: 8px;
+	overflow: hidden;
+}
+.physics,
+.fight {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.physics tr td,
+.fight tr td {
+	border: none;
+	padding: 1em;
+	width: 150px;
+}
+.physics tr td:first-child {
+	background-color: rgb(223, 223, 223);
+    color: black;
+	text-align: center;
+	font-weight: bold;
+}
+.physics tr td:last-child {
+	background-color: rgb(255, 255, 255);
+    color: black;
+	font-weight: bold;
+}
+.fight tr {
+	background-color: rgb(56, 56, 56);
+	color: rgb(191, 191, 191);
+	font-weight: bold;
+	text-align: center;
+	border-bottom: 1px solid rgb(191, 191, 191);
+}
+.fight tr:last-child {
+	border-bottom: none;
+}
+.image {
+	display: flex;
+	align-items: center;
+}
+.poke-id {
+	padding: 0 1em;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-radius: 8px;
+	background: linear-gradient(132deg, rgba(255, 165, 0, 1) 0%, rgba(255, 165, 0, 1) 50%, rgba(0, 0, 0, 1) 41%);
+}
+.poke-id p:nth-child(2) {
+	position: relative;
+	left: -10px;
+	font-weight: bold;
+}
+.poke-id p:nth-child(3) {
+	color: white;
+	position: relative;
+	left: 10px;
+	font-weight: bold;
+}
+.stats-container {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+}

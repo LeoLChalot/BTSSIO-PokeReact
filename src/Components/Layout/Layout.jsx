@@ -31,6 +31,9 @@ export default function Layout() {
 						<li>
 							<Link to="/pokedex">Pokédex</Link>
 						</li>
+						<li>
+							<Link to="/pokecard">Pokecard Exemple</Link>
+						</li>
 					</ul>
 				</nav>
 				<div className="btn-aside-ext" onClick={() => toggleAside()}>
@@ -53,6 +56,9 @@ export default function Layout() {
 						</li>
 						<li>
 							<Link to="/pokedex">Pokédex</Link>
+						</li>
+						<li>
+							<Link to="/pokecard">Pokecard Exemple</Link>
 						</li>
 					</ul>
 				</aside>
