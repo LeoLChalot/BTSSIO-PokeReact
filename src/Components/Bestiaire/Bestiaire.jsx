@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./Bestiaire.css";
 import axios, { all } from "axios";
 import { v4 as uuidv4 } from "uuid";
+import Miniature from "../PokeMiniature/Miniature";
 
 export default function Home() {
 	let [allPokemon, setAllPokemon] = useState([]);
@@ -54,7 +55,6 @@ export default function Home() {
 			(e) => console.log(e);
 		}
 	}
-
 	function pageFirst() {
 		setAllPokemon((allPokemon) => []);
 		displayPokemon(url);
@@ -84,18 +84,12 @@ export default function Home() {
 					{allPokemon.map((pokemon) => {
 						return (
 							<>
-								<div key={uuidv4()} className="poke-card" type={pokemon.types[0].type.name}>
-									{console.log(pokemon)}
-
-									<img src={pokemon.sprites.front_default} alt="image du pokémon" />
-									<p>{pokemon.name}</p>
-									<div className="btn-container">
-										<button className="btn-info">Info</button>
-										<button className="btn-add" onClick={() => addToPokedex(pokemon.name)}>
-											add
-										</button>
-									</div>
-								</div>
+								<Miniature
+									id={pokemon.id}
+									name={pokemon.name}
+									type={pokemon.types[0].type.name}
+									sprite={pokemon.sprites.front_default}
+								/>
 							</>
 						);
 					})}

@@ -1,5 +1,5 @@
 import "./Pokecard.css";
-
+import { useState } from "react";
 export default function Pokecard({ id, name, type, hp, attack, defense, height, weight, image }) {
 	return (
 		<>
@@ -17,34 +17,38 @@ export default function Pokecard({ id, name, type, hp, attack, defense, height, 
 						</div>
 						<div className="poke-physics">
 							<table className="physics">
-								<tr>
-									<td>Type</td>
-									<td>{type}</td>
-								</tr>
-								<tr>
-									<td>Height</td>
-									<td>{height}</td>
-								</tr>
-								<tr>
-									<td>Weight</td>
-									<td>{weight}</td>
-								</tr>
+								<tbody>
+									<tr>
+										<td>Type</td>
+										<td>{type}</td>
+									</tr>
+									<tr>
+										<td>Height</td>
+										<td>{height}</td>
+									</tr>
+									<tr>
+										<td>Weight</td>
+										<td>{weight}</td>
+									</tr>
+								</tbody>
 							</table>
 						</div>
 						<div className="poke-fight">
 							<table className="fight">
-								<tr>
-									<td>Hp</td>
-									<td>{hp}</td>
-								</tr>
-								<tr>
-									<td>Attack</td>
-									<td>{attack}</td>
-								</tr>
-								<tr>
-									<td>Defense</td>
-									<td>{defense}</td>
-								</tr>
+								<tbody>
+									<tr>
+										<td>Hp</td>
+										<td>{hp}</td>
+									</tr>
+									<tr>
+										<td>Attack</td>
+										<td>{attack}</td>
+									</tr>
+									<tr>
+										<td>Defense</td>
+										<td>{defense}</td>
+									</tr>
+								</tbody>
 							</table>
 						</div>
 					</div>

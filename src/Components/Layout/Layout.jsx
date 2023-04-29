@@ -32,7 +32,7 @@ export default function Layout() {
 							<Link to="/pokedex">Pokédex</Link>
 						</li>
 						<li>
-							<Link to="/pokecard">Pokecard Exemple</Link>
+							<Link to="/pokesearch">Search</Link>
 						</li>
 					</ul>
 				</nav>
@@ -58,7 +58,7 @@ export default function Layout() {
 							<Link to="/pokedex">Pokédex</Link>
 						</li>
 						<li>
-							<Link to="/pokecard">Pokecard Exemple</Link>
+						<Link to="/pokesearch">Search</Link>
 						</li>
 					</ul>
 				</aside>

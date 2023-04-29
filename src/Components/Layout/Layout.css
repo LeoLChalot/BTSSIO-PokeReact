@@ -83,17 +83,20 @@
 	top: 0;
 	left: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     transform: translate(-100%);
     transition: .3s all ease;
 }
 .Aside-menu .logo{
-    position: absolute;
-    top: calc(50% - 150px);
+    position: relative;
     width: 100%;
 }
 .Aside-menu .logo img{
+    position: absolute;
+    top: 50px;
+    left: 0;
     width: 100%;
 }
 .Aside-menu.active{
