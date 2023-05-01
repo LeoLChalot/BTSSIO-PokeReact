@@ -7,15 +7,6 @@ import axios from "axios";
 export default function PokeSearch() {
 	const [pokemon, setPokemon] = useState("clefairy");
 	const [url, setUrl] = useState(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
-	// const [id, setId] = useState(0);
-	// const [name, setName] = useState("--");
-	// const [type, setType] = useState("--");
-	// const [hp, setHp] = useState(0);
-	// const [attack, setAttack] = useState(0);
-	// const [defense, setDefense] = useState(0);
-	// const [weight, setWeight] = useState(0);
-	// const [height, setHeight] = useState(0);
-	// const [image, setimage] = useState("../../../public/pokeball.png");
 	const [pokeObj, setPokeObj] = useState({
 		id: 0,
 		name: "--",
@@ -35,20 +26,9 @@ export default function PokeSearch() {
 				.get(url)
 				.then((res) => {
 					console.log(2);
-
 					let pokemon = res.data;
-					console.log(pokemon);
-
-					// setId(pokemon.id);
-					// setName(pokemon.name);
-					// setType(pokemon.types[0].type);
-					// setHp(pokemon.stats[0].base_stat);
-					// setAttack(pokemon.stats[1].base_stat);
-					// setDefense(pokemon.stats[2].base_stat);
-					// setHeight(pokemon.height);
-					// setWeight(pokemon.weight);
-					// console.log(pokemon.sprites);
-					console.log(pokemon.sprites.other.dream_world.front_default);
+					// console.log(pokemon);
+					// console.log(pokemon.sprites.other.dream_world.front_default);
 					setPokeObj((pokeObj) => ({
 						id: pokemon.id,
 						name: pokemon.name,
@@ -70,17 +50,17 @@ export default function PokeSearch() {
 
 	function handleSubmit(e) {
 		// Prevent the browser from reloading the page
-		setPokeObj({
-			id: 0,
-			name: "--",
-			type: "--",
-			hp: 0,
-			attack: 0,
-			defense: 0,
-			height: 0,
-			weight: 0,
-			image: "../../../public/pokeball.png",
-		});
+		// setPokeObj({
+		// 	id: 0,
+		// 	name: "--",
+		// 	type: "--",
+		// 	hp: 0,
+		// 	attack: 0,
+		// 	defense: 0,
+		// 	height: 0,
+		// 	weight: 0,
+		// 	image: "../../../public/pokeball.png",
+		// });
 		e.preventDefault();
 		// Read the form data
 		const form = e.target;
@@ -101,7 +81,6 @@ export default function PokeSearch() {
 				</form>
 			</div>
 			<div className="poke-container">
-				{console.log(pokeObj)}
 				<Pokecard
 					id={pokeObj.id}
 					name={pokeObj.name}
