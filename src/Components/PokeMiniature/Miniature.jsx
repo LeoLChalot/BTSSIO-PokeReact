@@ -8,7 +8,7 @@ export default function Miniature({ id, name, type, sprite}) {
 				<img src={sprite} alt="image du pokémon" />
 				<p>{name}</p>
 				<div className="btn-container">
-					<button className="btn-info">Info</button>
+					{/* <button className="btn-info">Info</button> */}
 					<button className="btn-add" onClick={() => {console.log(id)}}>add</button>
 				</div>
 			</div>
