@@ -1,19 +1,20 @@
 import "./Pokecard.css";
 import { useState } from "react";
+import pokeball from "../../../public/pokeball.png";
 export default function Pokecard({ id, name, type, hp, attack, defense, height, weight, image }) {
 	return (
 		<>
 			<main className="pokecard-body">
 				<div className="pokecard">
 					<div className="image">
-						<img className="logo-big" src={image} alt="img roucool" />
+						<img className="logo-big" src={image} alt="image pokemon" />
 					</div>
 					<div className="stats-container">
 						<div className="poke-id">
-							<img className="logo-small" src={image} alt="roucool" height="45" />
+							<img className="logo-small" src={image} alt="image pokemon" height="45" />
 							<p>No. {id}</p>
 							<p>{name}</p>
-							<img className="pokeball" src={image} alt="pokeball" />
+							<img className="pokeball" src={pokeball} alt="pokeball" />
 						</div>
 						<div className="poke-physics">
 							<table className="physics">
@@ -24,11 +25,11 @@ export default function Pokecard({ id, name, type, hp, attack, defense, height, 
 									</tr>
 									<tr>
 										<td>Height</td>
-										<td>{height}</td>
+										<td>{height}0 cm</td>
 									</tr>
 									<tr>
 										<td>Weight</td>
-										<td>{weight}</td>
+										<td>{weight} lbs</td>
 									</tr>
 								</tbody>
 							</table>

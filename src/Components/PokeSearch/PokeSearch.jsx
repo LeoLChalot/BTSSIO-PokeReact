@@ -1,44 +1,65 @@
 import "./PokeSearch.css";
 import { useState } from "react";
 import Pokecard from "../Pokecard/Pokecard";
-import viteLogo from "../../../public/vite.svg";
+import pokeball from "../../../public/pokeball.png";
 import axios from "axios";
 
 export default function PokeSearch() {
 	const [pokemon, setPokemon] = useState("clefairy");
 	const [url, setUrl] = useState(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
-	const [id, setId] = useState([]);
-	const [name, setName] = useState([]);
-	const [type, setType] = useState([]);
-	const [hp, setHp] = useState([]);
-	const [attack, setAttack] = useState([]);
-	const [defense, setDefense] = useState([]);
-	const [weight, setWeight] = useState([]);
-	const [height, setHeight] = useState([]);
-	const [image, setimage] = useState([]);
+	// const [id, setId] = useState(0);
+	// const [name, setName] = useState("--");
+	// const [type, setType] = useState("--");
+	// const [hp, setHp] = useState(0);
+	// const [attack, setAttack] = useState(0);
+	// const [defense, setDefense] = useState(0);
+	// const [weight, setWeight] = useState(0);
+	// const [height, setHeight] = useState(0);
+	// const [image, setimage] = useState("../../../public/pokeball.png");
+	const [pokeObj, setPokeObj] = useState({
+		id: 0,
+		name: "--",
+		type: "--",
+		hp: 0,
+		attack: 0,
+		defense: 0,
+		height: 0,
+		weight: 0,
+		image: "../../../public/pokeball.png",
+	});
 
 	async function displayPokemon(url) {
-		// console.log(1);
 		console.log(url);
 		try {
 			axios
 				.get(url)
 				.then((res) => {
 					console.log(2);
-					// console.log(res);
-					let data = res.data;
-					console.log(data);
-					setId(data.id);
-					setName(data.name);
-					setType(data.types[0].type);
-					setHp(data.stats[0].base_stat);
-					setAttack(data.stats[1].base_stat);
-					setDefense(data.stats[2].base_stat);
-					setHeight(data.height);
-					setWeight(data.weight);
-					setimage(data.sprites.front_default);
-                    console.log(data.stats[1].base_stat)
-                    console.log(id, name, type, hp, attack, defense, height, weight, image);
+
+					let pokemon = res.data;
+					console.log(pokemon);
+
+					// setId(pokemon.id);
+					// setName(pokemon.name);
+					// setType(pokemon.types[0].type);
+					// setHp(pokemon.stats[0].base_stat);
+					// setAttack(pokemon.stats[1].base_stat);
+					// setDefense(pokemon.stats[2].base_stat);
+					// setHeight(pokemon.height);
+					// setWeight(pokemon.weight);
+					// console.log(pokemon.sprites);
+					console.log(pokemon.sprites.other.dream_world.front_default);
+					setPokeObj((pokeObj) => ({
+						id: pokemon.id,
+						name: pokemon.name,
+						type: pokemon.types[0].type,
+						hp: pokemon.stats[0].base_stat,
+						attack: pokemon.stats[1].base_stat,
+						defense: pokemon.stats[2].base_stat,
+						height: pokemon.height,
+						weight: pokemon.weight,
+						image: pokemon.sprites.other.dream_world.front_default,
+					}));
 				})
 				.catch((e) => console.log(e));
 		} catch {
@@ -49,6 +70,17 @@ export default function PokeSearch() {
 
 	function handleSubmit(e) {
 		// Prevent the browser from reloading the page
+		setPokeObj({
+			id: 0,
+			name: "--",
+			type: "--",
+			hp: 0,
+			attack: 0,
+			defense: 0,
+			height: 0,
+			weight: 0,
+			image: "../../../public/pokeball.png",
+		});
 		e.preventDefault();
 		// Read the form data
 		const form = e.target;
@@ -58,19 +90,6 @@ export default function PokeSearch() {
 		setPokemon(formJson.pokemon);
 		setUrl(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
 		displayPokemon(url);
-        // return (
-        //     <Pokecard
-        //         id={id}
-        //         name={name}
-        //         type={type}
-        //         hp={hp}
-        //         attack={attack}
-        //         defense={defense}
-        //         height={height}
-        //         weight={weight}
-        //         image={image}
-        //     />
-        // )
 	}
 
 	return (
@@ -81,31 +100,20 @@ export default function PokeSearch() {
 					<input type="submit" value="Chercher" />
 				</form>
 			</div>
-            <div className="poke-container">
-            {id != '' && <Pokecard
-                id={id}
-                name={name}
-                type={type}
-                hp={hp}
-                attack={attack}
-                defense={defense}
-                height={height}
-                weight={weight}
-                image={image}
-            />}
-            
-            </div>
-			{/* <Pokecard
-				id={1}
-				name="Roucoups"
-				type="normal"
-				hp={40}
-				attack={50}
-				defense={30}
-				height={35}
-				weight={15}
-				image={viteLogo}
-			/> */}
+			<div className="poke-container">
+				{console.log(pokeObj)}
+				<Pokecard
+					id={pokeObj.id}
+					name={pokeObj.name}
+					type={pokeObj.type.name}
+					hp={pokeObj.hp}
+					attack={pokeObj.attack}
+					defense={pokeObj.defense}
+					height={pokeObj.height}
+					weight={pokeObj.weight}
+					image={pokeObj.image}
+				/>
+			</div>
 		</>
 	);
 }

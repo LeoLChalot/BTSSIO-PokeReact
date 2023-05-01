@@ -1,0 +1,15 @@
+.poke-form{
+	width: 100%;
+	margin: 2em 0;
+	display: flex;
+	justify-content: center;
+}
+
+.poke-form form{
+	display: flex;
+	flex-direction: row;
+	gap: 2em;
+}
+.poke-form form input{
+	padding: .3em;
+}

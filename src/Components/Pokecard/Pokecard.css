@@ -13,21 +13,6 @@
 	justify-content: center;
 	align-items: center;
 }
-.poke-form{
-	width: 100%;
-	margin: 1em 0;
-	display: flex;
-	justify-content: flex-start;
-}
-
-.poke-form form{
-	display: flex;
-	flex-direction: row;
-	gap: 2em;
-}
-.poke-form form input{
-	padding: .3em;
-}
 
 .pokecard {
 	width: 100%;
@@ -35,6 +20,11 @@
 	flex-direction: column;
 	justify-content: center;
 	gap: 2em;
+}
+.pokecard .image{
+	width: 100%;
+	display: flex;
+	justify-content: center;
 }
 .logo-big {
 	width: 250px;
