@@ -8,6 +8,7 @@
 	border-radius: 5px;
 	transition: all 0.5s ease;
 	position: relative;
+	opacity: .8;
 }
 
 .poke-card::after {
@@ -38,13 +39,13 @@
 	transform: scaleX(1.2) scaleY(1.2) scaleZ(1.2) rotateX(-5deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(0px)
 		translateZ(0px) skewX(0deg) skewY(0deg);
 		box-shadow: 1px 7px 8px 0px rgba(0, 0, 0, 1);
-	/* animation: distorsion 1s ease; */
+		opacity: 1;
 }
 .poke-card:hover button{
 	z-index: 999;
 	transform: scale(1.2);
 	box-shadow: 1px 7px 8px 0px rgba(0, 0, 0, 1);
-	opacity: 1;
+	opacity: .8;
 }
 .poke-card img {
 	width: 80px;
