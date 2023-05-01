@@ -1,7 +1,7 @@
 import "./PokeSearch.css";
 import { useState } from "react";
 import Pokecard from "../Pokecard/Pokecard";
-import pokeball from "../../../public/pokeball.png";
+import pokeball from "../../assets/pokeball.png";
 import axios from "axios";
 
 export default function PokeSearch() {
@@ -50,17 +50,6 @@ export default function PokeSearch() {
 
 	function handleSubmit(e) {
 		// Prevent the browser from reloading the page
-		// setPokeObj({
-		// 	id: 0,
-		// 	name: "--",
-		// 	type: "--",
-		// 	hp: 0,
-		// 	attack: 0,
-		// 	defense: 0,
-		// 	height: 0,
-		// 	weight: 0,
-		// 	image: "../../../public/pokeball.png",
-		// });
 		e.preventDefault();
 		// Read the form data
 		const form = e.target;
