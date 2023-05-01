@@ -6,7 +6,7 @@
 	align-items: center;
 	justify-content: center;
 	border-radius: 5px;
-	transition: all 0.3s ease;
+	transition: all 0.5s ease;
 	position: relative;
 }
 
@@ -30,11 +30,14 @@
 .poke-card:focus::after {
 	transition: background-position 0.3s;
 	background-position: 0px 0;
+	box-shadow: 1px 0px 8px 0px rgba(0, 0, 0, 1);
 }
 
 .poke-card:hover {
-	transform: scaleX(1) scaleY(1) scaleZ(1) rotateX(-5deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(0px)
+	z-index: 999;
+	transform: scaleX(1.2) scaleY(1.2) scaleZ(1.2) rotateX(-5deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(0px)
 		translateZ(0px) skewX(0deg) skewY(0deg);
+		box-shadow: 1px 7px 8px 0px rgba(0, 0, 0, 1);
 }
 .poke-card img {
 	width: 80px;

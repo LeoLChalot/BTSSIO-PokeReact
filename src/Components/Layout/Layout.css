@@ -1,5 +1,5 @@
 .Navbar{
-    z-index: 999;
+    z-index: 50;
     background-color: white;
     position: fixed;
     top: 0;
@@ -10,7 +10,6 @@
 }
 .Navbar .logo{
     position: absolute;
-    /* width: 100%; */
     left: 10px;
 }
 .Navbar ul {
@@ -75,7 +74,7 @@
     background-color: var(--bg-black);
 }
 .Aside-menu{
-    z-index: 999;
+    z-index: 50;
     width: auto;
     height: 100%;
     background-color: white;

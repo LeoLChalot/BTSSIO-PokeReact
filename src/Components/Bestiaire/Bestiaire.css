@@ -1,5 +1,4 @@
 main {
-	/* width: 100%; */
 	padding: 2em;
 	display: flex;
 	flex-direction: column;
@@ -21,15 +20,14 @@ main {
 }
 .pokemon-container {
 	z-index: 0;
-	/* padding: 2em; */
 	width: 100%;
 	position: relative;
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
 	flex-wrap: wrap;
-	gap: 20px;
-	perspective: 850px;
-	perspective-origin: 50% 50%;
+	gap: 5px;
+	perspective: 700px;
+	perspective-origin: 40% 50%;
 }
 .pagination {
 	width: 200px;
