@@ -23,16 +23,16 @@ export default function Layout() {
 					</div>
 					<ul>
 						<li>
-							<Link to="/bestiaire">Bestaire</Link>
+							<Link to="/">Home</Link>
 						</li>
 						<li>
-							<Link to="/">Home</Link>
+							<Link to="/bestiaire">Pokemons</Link>
 						</li>
 						<li>
 							<Link to="/pokedex">Pokédex</Link>
 						</li>
 						<li>
-							<Link to="/pokesearch">Search</Link>
+							<Link to="/pokesearch">Infos</Link>
 						</li>
 					</ul>
 				</nav>
@@ -58,7 +58,7 @@ export default function Layout() {
 							<Link to="/pokedex">Pokédex</Link>
 						</li>
 						<li>
-						<Link to="/pokesearch">Search</Link>
+							<Link to="/pokesearch">Infos</Link>
 						</li>
 					</ul>
 				</aside>

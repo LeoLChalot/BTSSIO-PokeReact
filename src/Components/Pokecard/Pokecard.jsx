@@ -2,6 +2,9 @@ import "./Pokecard.css";
 import { useState } from "react";
 import pokeball from "../../assets/pokeball.png";
 export default function Pokecard({ id, name, type, hp, attack, defense, height, weight, image }) {
+
+	weight = weight * 0.45;
+
 	return (
 		<>
 			<main className="pokecard-body">
@@ -29,7 +32,7 @@ export default function Pokecard({ id, name, type, hp, attack, defense, height, 
 									</tr>
 									<tr>
 										<td>Weight</td>
-										<td>{weight} lbs</td>
+										<td>{weight} kg</td>
 									</tr>
 								</tbody>
 							</table>

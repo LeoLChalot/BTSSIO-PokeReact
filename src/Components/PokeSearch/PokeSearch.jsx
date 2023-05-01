@@ -5,8 +5,8 @@ import pokeball from "../../assets/pokeball.png";
 import axios from "axios";
 
 export default function PokeSearch() {
-	const [pokemon, setPokemon] = useState("clefairy");
-	const [url, setUrl] = useState(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
+	const [pokemon, setPokemon] = useState("");
+	const [url, setUrl] = useState(`https://pokeapi.co/api/v2/pokemon/`);
 	const [pokeObj, setPokeObj] = useState({
 		id: 0,
 		name: "--",
@@ -20,45 +20,58 @@ export default function PokeSearch() {
 	});
 
 	async function displayPokemon(url) {
-		console.log(url);
+		setUrl("https://pokeapi.co/api/v2/pokemon/" + pokemon);
+		console.log("Url func displayPokemon : ", url);
 		try {
 			axios
 				.get(url)
 				.then((res) => {
 					console.log(2);
 					let pokemon = res.data;
-					// console.log(pokemon);
-					// console.log(pokemon.sprites.other.dream_world.front_default);
+					console.log(pokemon)
+					let id = pokemon.id;
+					let name = pokemon.name;
+					let type = pokemon.types[0].type;
+					let hp = pokemon.stats[0].base_stat;
+					let attack = pokemon.stats[1].base_stat;
+					let defense = pokemon.stats[2].base_stat;
+					let height = pokemon.height;
+					let weight = pokemon.weight;
+					let image = pokemon.sprites.other.dream_world.front_default;
 					setPokeObj((pokeObj) => ({
-						id: pokemon.id,
-						name: pokemon.name,
-						type: pokemon.types[0].type,
-						hp: pokemon.stats[0].base_stat,
-						attack: pokemon.stats[1].base_stat,
-						defense: pokemon.stats[2].base_stat,
-						height: pokemon.height,
-						weight: pokemon.weight,
-						image: pokemon.sprites.other.dream_world.front_default,
+						...pokeObj,
+						id: id,
+						name: name,
+						type: type,
+						hp: hp,
+						attack: attack,
+						defense: defense,
+						height: height,
+						weight: weight,
+						image: image,
 					}));
+					console.log(3);
 				})
 				.catch((e) => console.log(e));
 		} catch {
 			(e) => console.log(e);
 		}
-		console.log(3);
+		console.log(4);
 	}
 
 	function handleSubmit(e) {
-		// Prevent the browser from reloading the page
-		e.preventDefault();
-		// Read the form data
-		const form = e.target;
-		const formData = new FormData(form);
-		const formJson = Object.fromEntries(formData.entries());
-		// console.log(formJson.pokemon);
-		setPokemon(formJson.pokemon);
-		setUrl(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
-		displayPokemon(url);
+			console.log(1);
+			e.preventDefault();
+			const form = e.target;
+			const formData = new FormData(form);
+			const formJson = Object.fromEntries(formData.entries());
+			let pokemonName = formJson.pokemon;
+			pokemonName = pokemonName.toLowerCase();
+
+			setPokemon(pokemonName);
+			setUrl("https://pokeapi.co/api/v2/pokemon/" + pokemon);
+			console.log("Url func handleSubmit : ", url);
+			displayPokemon(url);
 	}
 
 	return (
