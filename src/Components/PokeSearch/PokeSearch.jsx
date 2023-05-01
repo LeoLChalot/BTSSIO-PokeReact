@@ -16,7 +16,7 @@ export default function PokeSearch() {
 		defense: 0,
 		height: 0,
 		weight: 0,
-		image: "../../../public/pokeball.png",
+		image: pokeball,
 	});
 
 	async function displayPokemon(url) {
