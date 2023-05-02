@@ -6,11 +6,12 @@ import { useState } from "react";
 export default function Miniature({ id, name, type, sprite, btn }) {
 
 	let pokedex = JSON.parse(localStorage.getItem("pokedex")) || [];
-	console.log(pokedex);
+	// console.log(pokedex);
 
 	function handleDelete() {
-		pokedex = pokedex.filter((pokemon) => pokemon.name !== name)
-		
+		console.log(pokedex)
+		pokedex.filter((pokemon) => pokemon.name !== name)
+		localStorage.setItem("pokedex", JSON.stringify(pokedex));
 	}
 
 	function handleAdd() {
@@ -32,7 +33,7 @@ export default function Miniature({ id, name, type, sprite, btn }) {
 				<p>{name}</p>
 				<div className="btn-container">
 					{btn == "add" && <img onClick={handleAdd} className="btn-add" src={pokeball} alt="" />}
-					{btn == "delete" && <button onClick={handleDelete}>Delete</button>}
+					{btn == "delete" && <button onClick={() => handleDelete()}>Delete</button>}
 				</div>
 			</div>
 		</>

@@ -72,8 +72,8 @@
 	box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 1);
 	transition: .7s all ease
 }
-.btn-container .btn-add:focus{
-	animation: distorsion 1s ease;
+.btn-container .btn-add:active{
+	transform: rotate(180deg);
 }
 .btn-add,
 .btn-info {
