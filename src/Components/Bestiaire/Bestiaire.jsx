@@ -89,6 +89,7 @@ export default function Home() {
 									name={pokemon.name}
 									type={pokemon.types[0].type.name}
 									sprite={pokemon.sprites.front_default}
+									btn="add"
 								/>
 							</>
 						);

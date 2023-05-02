@@ -24,6 +24,7 @@ export default function Home() {
 									name={pokemon.name}
 									type={pokemon.type}
 									sprite={pokemon.sprite}
+									btn="delete"
 								/>
 							</>
 						);

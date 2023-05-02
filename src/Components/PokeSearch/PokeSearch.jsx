@@ -28,7 +28,7 @@ export default function PokeSearch() {
 				.then((res) => {
 					console.log(2);
 					let pokemon = res.data;
-					console.log(pokemon)
+					console.log(pokemon);
 					let id = pokemon.id;
 					let name = pokemon.name;
 					let type = pokemon.types[0].type;
@@ -60,18 +60,18 @@ export default function PokeSearch() {
 	}
 
 	function handleSubmit(e) {
-			console.log(1);
-			e.preventDefault();
-			const form = e.target;
-			const formData = new FormData(form);
-			const formJson = Object.fromEntries(formData.entries());
-			let pokemonName = formJson.pokemon;
-			pokemonName = pokemonName.toLowerCase();
+		console.log(1);
+		e.preventDefault();
+		const form = e.target;
+		const formData = new FormData(form);
+		const formJson = Object.fromEntries(formData.entries());
+		let pokemonName = formJson.pokemon;
+		pokemonName = pokemonName.toLowerCase();
 
-			setPokemon(pokemonName);
-			setUrl("https://pokeapi.co/api/v2/pokemon/" + pokemon);
-			console.log("Url func handleSubmit : ", url);
-			displayPokemon(url);
+		setPokemon(pokemonName);
+		setUrl("https://pokeapi.co/api/v2/pokemon/" + pokemon);
+		console.log("Url func handleSubmit : ", url);
+		displayPokemon(url);
 	}
 
 	return (
