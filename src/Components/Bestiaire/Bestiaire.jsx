@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import "./Bestiaire.css";
-import axios, { all } from "axios";
-import { v4 as uuidv4 } from "uuid";
+import axios from "axios";
 import Miniature from "../PokeMiniature/Miniature";
 
 export default function Home() {

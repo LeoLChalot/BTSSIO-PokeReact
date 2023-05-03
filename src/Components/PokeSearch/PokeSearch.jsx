@@ -21,12 +21,12 @@ export default function PokeSearch() {
 
 	async function displayPokemon(url) {
 		setUrl("https://pokeapi.co/api/v2/pokemon/" + pokemon);
-		console.log("Url func displayPokemon : ", url);
+		// console.log("Url func displayPokemon : ", url);
 		try {
 			axios
 				.get(url)
 				.then((res) => {
-					console.log(2);
+					// console.log(2);
 					let pokemon = res.data;
 					console.log(pokemon);
 					let id = pokemon.id;
@@ -39,7 +39,7 @@ export default function PokeSearch() {
 					let weight = pokemon.weight;
 					let image = pokemon.sprites.other.dream_world.front_default;
 					setPokeObj((pokeObj) => ({
-						...pokeObj,
+						// ...pokeObj,
 						id: id,
 						name: name,
 						type: type,
@@ -50,17 +50,17 @@ export default function PokeSearch() {
 						weight: weight,
 						image: image,
 					}));
-					console.log(3);
+					// console.log(3);
 				})
 				.catch((e) => console.log(e));
 		} catch {
 			(e) => console.log(e);
 		}
-		console.log(4);
+		// console.log(4);
 	}
 
 	function handleSubmit(e) {
-		console.log(1);
+		// console.log(1);
 		e.preventDefault();
 		const form = e.target;
 		const formData = new FormData(form);
@@ -70,7 +70,7 @@ export default function PokeSearch() {
 
 		setPokemon(pokemonName);
 		setUrl("https://pokeapi.co/api/v2/pokemon/" + pokemon);
-		console.log("Url func handleSubmit : ", url);
+		// console.log("Url func handleSubmit : ", url);
 		displayPokemon(url);
 	}
 

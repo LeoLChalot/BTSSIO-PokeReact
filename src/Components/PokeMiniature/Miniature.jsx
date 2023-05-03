@@ -1,15 +1,13 @@
 import "./Miniature.css";
 import { v4 as uuidv4 } from "uuid";
 import pokeball from "../../assets/pokeball.png";
-import { useState } from "react";
 
 export default function Miniature({ id, name, type, sprite, btn }) {
 
 	let pokedex = JSON.parse(localStorage.getItem("pokedex")) || [];
-	// console.log(pokedex);
 
 	function handleDelete() {
-		console.log(pokedex)
+		// console.log(pokedex)
 		pokedex.filter((pokemon) => pokemon.name !== name)
 		localStorage.setItem("pokedex", JSON.stringify(pokedex));
 	}
