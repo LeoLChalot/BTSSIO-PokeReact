@@ -10,7 +10,7 @@ export default function Pokecard({ id, name, type, hp, attack, defense, height, 
 				<div className="pokecard">
 					<div className="image">
 						<img className="logo-big" src={image} alt="image pokemon" />
-					</div>
+					</div>x
 					<div className="stats-container">
 						<div className="poke-id">
 							<img className="logo-small" src={image} alt="image pokemon" height="45" />

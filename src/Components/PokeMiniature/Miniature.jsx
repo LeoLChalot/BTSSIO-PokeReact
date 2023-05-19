@@ -22,6 +22,7 @@ export default function Miniature({ id, name, type, sprite, btn }) {
 		});
 		localStorage.setItem("pokedex", JSON.stringify(pokedex));
 		console.log(pokedex);
+		window.location.reload();
 	}
 
 	return (
